@@ -18,7 +18,7 @@ orbs:
   workflows:
     dev_test:
       jobs:
-        -test:
+        -aws-ecr/test:
           filters:
             branches:
               ignore: 
