@@ -1,11 +1,16 @@
 version: 2.1
-orbs:
-  node: circleci/node@1.1.6
-jobs:
 
-  build:
-    docker:
-      - image: circleci/node:8.9.0
+orbs:
+  aws-ecr: circleci/aws-ecr@x.y.z
+  aws-ecs: circleci/aws-ecs@0x.y.z
+
+workflows:
+  test:
+    jobs:
+
+#  build:
+  #  docker:
+   #   - image: circleci/node:8.9.0
   
     steps:
       - checkout
