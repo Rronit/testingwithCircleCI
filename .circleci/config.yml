@@ -3,15 +3,25 @@ version: 2.1
 orbs:
   aws-ecr: circleci/aws-ecr@6.2.0
   aws-ecs: circleci/aws-ecs@0.0.11
+
 workflows:
-  test:
+  dev_test:
     jobs:
+      -test
+      filters:
+            branches:
+              except: master
 
 #  build:
   #  docker:
    #   - image: circleci/node:8.9.0
-  
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm test
+  jobs:
+    test:
+      docker:
+        - image: aws-ecr
+        - image: aws-ecs
+      working_directory: ~/testingwithCircleCI
+      steps:
+        - checkout
+        - run: npm install
+        - run: npm test
