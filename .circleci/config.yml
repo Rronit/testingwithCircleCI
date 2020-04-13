@@ -18,7 +18,7 @@ orbs:
   workflows:
     dev_test:
       jobs:
-        -test
+        -test:
           filters:
             branches:
               ignore: 
