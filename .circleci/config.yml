@@ -19,6 +19,10 @@ orbs:
     dev_test:
       jobs:
         -test
+          filters:
+            branches:
+              ignore: 
+                - master
         #  build:
   #  docker:
    #   - image: circleci/node:8.9.0
