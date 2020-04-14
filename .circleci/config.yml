@@ -1,25 +1,10 @@
 version: 2
-#orbs:
- # aws-ecr: circleci/aws-ecr@6.2.0
 jobs:
-  test:
+  build:
     docker:
-      - image: circleci/node:12.13
-    working_directory: ~/testingwithCircleCI
+      - image: circleci/node:8.9.0
+  
     steps:
       - checkout
       - run: npm install
       - run: npm test
-  build:
-    docker:
-        - image: google/cloud-sdk
-      working_directory: ~/testingwithCircleCI
-      steps:
-        - checkout
-        - run: npm install
-
-
-  
-        #  build:
-  #  docker:
-   #   - image: circleci/node:8.9.0
