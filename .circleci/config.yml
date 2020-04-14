@@ -14,6 +14,14 @@ jobs:
       - checkout
       - run: npm install
       - run: npm test
+  build:
+    docker:
+        - image: circleci/node@12.13
+      working_directory: ~/testingwithCircleCI
+      steps:
+        - checkout
+        - run: npm install
+
 
   
         #  build:
