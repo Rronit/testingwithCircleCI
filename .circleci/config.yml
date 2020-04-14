@@ -6,7 +6,7 @@ orbs:
     
 
   jobs:
-    test:
+    build:
       docker:
         - image: aws-ecr
       working_directory: ~/testingwithCircleCI
@@ -16,13 +16,13 @@ orbs:
         - run: npm test
 
   workflows:
+    version: 2.1
     "dev_test":
       jobs:
-        -aws-ecr/test:
+        -aws-ecr/build:
           filters:
             branches:
-              ignore: 
-                - master
+              ignore: master
         #  build:
   #  docker:
    #   - image: circleci/node:8.9.0
