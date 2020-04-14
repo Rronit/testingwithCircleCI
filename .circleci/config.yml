@@ -16,7 +16,7 @@ orbs:
         - run: npm test
 
   workflows:
-    dev_test:
+    "dev_test":
       jobs:
         -aws-ecr/test:
           filters:
