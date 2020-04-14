@@ -8,7 +8,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: circleci/aws-ecr@6.2.0
+      - image: circleci/node@12.13
     working_directory: ~/testingwithCircleCI
     steps:
       - checkout
